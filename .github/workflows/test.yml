@@ -27,4 +27,6 @@ jobs:
         run: id
 
       - name: npm
-        run: npm install -g yarn && echo "$NODE_PATH"
+        run: |
+          npm install -g yarn
+          env
