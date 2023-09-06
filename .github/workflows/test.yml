@@ -26,7 +26,28 @@ jobs:
       - name: Run a one-line script
         run: id
 
-      - name: npm
+      - name: before
         run: |
-          npm install -g yarn
+          npm -v
+          java -version
+          mvn -version
+          env
+          
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.7.0
+        with:
+          java-version: 17
+          java-distribution: temurin
+          maven-version: 3.8.7
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: after
+        run: |
+          npm -v
+          java -version
+          mvn -version
           env
