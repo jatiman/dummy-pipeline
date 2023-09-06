@@ -26,5 +26,5 @@ jobs:
       - name: Run a one-line script
         run: id
 
-      - name: apt
-        run: apt install wget && id
+      - name: npm
+        run: npm install -g yarn && id
